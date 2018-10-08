@@ -1,14 +1,48 @@
-<html>
-
+<html (mousemove)="onMove()">
 <h1>
-  Teaching Assistant
+  Teaching Assistant para alunos da UFPE
 </h1>
 
-<nav>
-    <a routerLink="/alunos">Alunos</a>
-    <a routerLink="/metas">Metas</a>
-</nav>
+<h2>
+  Aluno
+</h2>
 
-<router-outlet></router-outlet>
+<table>
+<tr>
+   <td><label>Nome </label></td>
+   <td><input [(ngModel)]="aluno.nome" ></td>
+   <td><button (click)="criarAluno(aluno)">Adicionar</button></td>
+</tr>
+<tr>
+   <td><label>CPF </label></td>
+   <td><input [(ngModel)]="aluno.cpf" ></td>
+</tr>
+<tr>
+   <td><label>e-mail </label></td>
+   <td><input [(ngModel)]="aluno.email" ></td>
+</tr>
+<tr>
+    <td><label>Curso</label></td>
+    <td><input [(ngModel)]="aluno.email" ></td>
+ </tr>
+ <tr>
+    <td><label>Turno</label></td>
+    <td><input type="checkbox">Matutino</td>
+ </tr>
+ <tr>
+    <td><label></label></td>
+    <td><input type="checkbox">Vespertino</td>
+ </tr>
+ <tr>
+    <td><label></label></td>
+    <td><input type="checkbox">Integral</td>
+ </tr>
+ <tr>
+    <td><label></label></td>
+    <td><input type="checkbox">Noturno</td>
+ </tr>
+</table>
+
+<metas [alunos]="alunos"></metas>
 
 </html>
